@@ -7,7 +7,6 @@ const cors = require('cors');
 app.set('port', 4000 || process.env.PORT);
 
 //Middlewares
-
 app.use(cors({origin: 'http://localhost:3000'}));
 app.use(morgan('dev'));
 app.use(express.json());
@@ -15,6 +14,9 @@ app.use(express.json());
 
 //Routes
 app.use(require('./routes/index'));
+
+//Database
+require('./database');
 
 //Starting the server
 app.listen(app.get('port'), () => {
