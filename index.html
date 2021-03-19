@@ -1,0 +1,362 @@
+<div class="titulo" style="width:100%; background-color:#063551; height: 40px; display: flex; align-items: center; justify-content: center;">
+    <h1 style="margin-top: 10px;"><span style="color:#FFFFFF;">Consulta la agenda por áreas</span></h1>
+    </div>
+    
+    <h3 style="text-align: center;">¿Quieres consultar la agenda por días? Conócela <a class="scroll-areas" href="#scroll-dias">aquí</a></h3>
+    <br />
+    <style type="text/css">.imagenes-agenda {
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            justify-content: center;
+        }
+    
+        .imagen-agenda {
+            position: relative;
+            cursor: pointer;
+            max-width: calc(100% / 3);
+            padding: 5px;
+            box-sizing: border-box;
+        }
+    
+        .imagen-agenda img {
+            max-width: 100%;
+        }
+    
+    
+        .p-titulo-imagen {
+            display: block;
+            height: 60px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            margin: auto auto;
+            padding: 0 5px;
+            line-height: 32px;
+    
+        }
+    
+        .info-conferencia {
+            display: flex;
+        }
+    
+        .fecha-info {
+            margin: 16px 0 0 116px;
+            font-weight: bold;
+        }
+    
+        .img-conferencista {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 16px;
+            max-width: 100px;
+        }
+    
+        .info-conferencista p {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+    
+        /* The Modal (background) */
+        .modal-conferencias {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1000;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100vh;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Black w/ opacity */
+        }
+    
+        /* Modal Content/Box */
+        .modal-content-conferencia-2021 {
+            background-color: #fefefe;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            overflow-y: scroll;
+            /* Could be more or less, depending on screen size */
+        }
+    
+        /* The Close Button */
+        .close-modal-conferencias {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+    
+        .close-modal-conferencias:hover,
+        .close-modal-conferencias:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    
+        .d-none {
+            display: none;
+        }
+    
+        @media screen and (max-width: 890px) {
+            .p-titulo-imagen {
+                font-size: 28px;
+            }
+        }
+    
+        @media screen and (max-width: 760px) {
+            .imagen-agenda {
+                max-width: calc(100% / 2);
+            }
+    
+            .p-titulo-imagen {
+                font-size: 24px;
+            }
+        }
+    
+        @media screen and (max-width: 450px) {
+            .imagen-agenda {
+                max-width: calc(100% / 1);
+            }
+        }
+    </style>
+    <!---   IMAGENES -->
+    <div class="imagenes-agenda">
+    <div class="imagen-agenda" onclick="openModal(0)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/Sistema-gestion.png/12a9ab6d-03e7-4281-abdc-719095d7a32d?t=1616096967419" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(1)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/energia.png/c867cfcf-9ca1-41f4-b7ab-10bc781db8e8?t=1616096968113" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(2)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/proyectos.png/f0ac9ecb-8ece-4988-bb40-c3a6ecef202b?t=1616096968611" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(3)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/derechos-humanos.png/ac3d3115-9788-4bda-aeb5-4be34b96b50d?t=1616096967817" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(4)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/gerencia-salud.png/b3018ef0-6b5a-494a-ab93-11a4ab3deab4?t=1616096968383" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(6)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/gestion-humana.png/e6d766da-d42a-49ef-a80d-06b0cb7e663f?t=1616096968901" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(7)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/mercadeo-comunicacion.png/7c01d87b-2ebe-4344-a2b4-bf1eef4cbef1?t=1616096969425" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(8)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/operaciones.png/72edac56-e048-4e07-98ed-45893673396c?t=1616096969670" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(9)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/tecnologia-datos.png/e634ee38-f8d4-4f0f-9f86-c57f746d17e4?t=1616096971227" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(11)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/urbanismo-territorio.png/30961daa-a7eb-4c8f-aa0b-1f7b44fc3999?t=1616096971403" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(12)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/publico-social.png/5ccbd630-2c5e-4106-81f2-5a0966841cbe?t=1616096971580" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(13)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/servicios-logisticos.png/8c5a4f1e-177e-4daf-ab7c-c0b95e28d4d4?t=1616096970980" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(14)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/financiero.png/f63fc81c-94c8-409a-9552-5b460fde47e9?t=1616096970053" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(16)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/fisica-geociencias.png/4b8b62f2-b855-4e5b-b623-f55a1d871427?t=1616096970487" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(18)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/quimica-biologia.png/9a1d04f7-a73c-469f-9703-2a7f300c9cac?t=1616096970277" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(20)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/matematicas-estadistica.png/072388d9-2e02-43ad-b866-b43258876cb0?t=1616096970730" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(21)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/idiomas.png/0f827ca9-59fe-4d73-81aa-518fad849569?t=1616096969851" /></div>
+    
+    <div class="imagen-agenda" onclick="openModal(22)"><img alt="imagen-agenda" src="https://www.uninorte.edu.co/documents/3464272/16461813/educacion.png/e482bb00-cccc-458b-9693-9244d0e84e61?t=1616096971731" /></div>
+    </div>
+    <!----  Modal     --->
+    
+    <div class="modal-conferencias" id="modal-conferencias"><!-- Modal content -->
+    <div class="modal-content-conferencia-2021"><span class="close-modal-conferencias">×</span>
+    
+    <div class="modal-body-conferencista">
+    <p class="fecha-info" id="fecha-c">&nbsp;</p>
+    
+    <div class="info-conferencia">
+    <div><img alt="conferencista" class="img-conferencista" id="imagen-modal-c" src="" /> <img alt="conferencista" class="img-conferencista d-none" id="imagen-modal-c-2" src="" /> <img alt="conferencista" class="img-conferencista d-none" id="imagen-modal-c-3" src="" /></div>
+    
+    <div class="info-conferencista">
+    <h2 id="titulo-c">&nbsp;</h2>
+    
+    <p id="conferencista-c">&nbsp;</p>
+    
+    <p id="descripcion-c">&nbsp;</p>
+    
+    <p id="inscribete-c">&nbsp;</p>
+    </div>
+    </div>
+    <!--- Segundo conferencista -->
+    
+    <hr class="fecha-info" />
+    <p class="fecha-info" id="fecha-c2">&nbsp;</p>
+    
+    <div class="info-conferencia" id="conferencista2"><img alt="conferencista" class="img-conferencista" id="imagen-modal-c2" src="" />
+    <div class="info-conferencista">
+    <h2 id="titulo-c2">&nbsp;</h2>
+    
+    <p id="conferencista-c2">&nbsp;</p>
+    
+    <p id="descripcion-c2">&nbsp;</p>
+    
+    <p id="inscribete-c2">&nbsp;</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script>
+    
+        const datos = [{
+            fecha: 'Martes 13 de abril 8:30 a 9:30 AM',
+            titulo: 'LA EXPERIENCIA PHYGITAL: CREACIÓN DE VALOR TANGIBLE A TRAVÉS DE LO INTANGIBLE.',
+            conferencista: 'Gloria Valenzuela Becerra.',
+            descripcion: 'Psicóloga, Doctorada en Educación, Máster en Gestión del conocimiento, especializada en Gerencia de Recursos Humanos, master coach, certificada como coaching personal y coaching ejecutivo avanzado. Conferencista nacional e internacional y profesora de cátedra en diferentes universidades a nivel nacional. Consultora en Colombia y Centro América.',
+            inscribete: '', imagen: 'http://travel.spotcoolstuff.com/wp-content/uploads/2008/11/dark.jpg'
+        },
+        { fecha: 'Martes 13 de abril 8:30 a 9:30 AM', titulo: 'Inteligencia Energética aplicada a Motores Eléctricos de Inducción', conferencista: 'Fabián Enrique Coll Viloria', descripcion: 'Ingeniero electricista egresado de la Universidad del Norte en 2002, con Maestría en Fuentes Renovables de Energía y Administración Energética del Institituto Tecnológico de Monterrey en México (2016) así como Especialista en Gestión Eficiente de la Energía de la Universidad del Atlántico (2011). Certified Energy Manager (CEM) de la Asociación de Ingenieros en Energía de los Estados Unidos (AEE por sus siglas en inglés). Especialista Comercial de Proyectos de la empresa e2 Energía Eficiente S.A. E.S.P. desde el 2006. Profesor Invitado de la Especialización en Gestión Eficiente de la Energía de la Universidad del Atlántico, y docente catedrático de las asignaturas Calidad de la Energía Eléctrica 1 y 2 de la Universidad de la Costa (CUC) desde el 2007. Conferencista invitado por el Banco Interamericano de Desarrrollo (BID) para presentación de temáticas energéticas en Panama y miembro de la junta directiva de ACIEM Capitulo Atlántico, así como conferencista de la misma.', inscribete: '', imagen: 'http://travel.spotcoolstuff.com/wp-content/uploads/2008/11/dark.jpg' },
+        { fecha: 'Martes 13 de abril 10:00 a 11:00 AM', titulo: 'La gestión de proyectos en una realidad Phygital', conferencista: 'Samir Isaac Arana Pantoja', descripcion: 'Magister en Administración de Tecnologías de Información del Tecnológico de Monterrey. Especialista en Redes de Computadores, Especialista en Gerencia de Sistemas de Información e Ingeniero Electrónico de la Universidad del Norte. SCRUM Master, Foundations in Design Thinking, PMP, ITIL & GIMI 1 Actuamente es Director de TI y Líder de Transformación Digital – SYKES Colombia.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Samir-Arana.png/1cbd34e1-59ff-47bb-ab5f-53b6a65381b8?t=1616102068447' },
+        { fecha: 'Martes 13 de abril 2:00 a 3:00 PM', titulo: 'Derechos humanos y los gigantes de internet', conferencista: 'Dra. Amanda Romero Medina', descripcion: 'Representante para Sudamérica del Centro de Información sobre Empresas y Derechos Humanos Investigadora Senior y Representante para Sudamérica – Representante Legal Oficina Colombia, Centro de Información sobre Empresas y Derechos Humanos.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Amanda-Romero.png/214693ca-f088-4e25-8344-eed697307a5a?t=1616102070837' },
+        { fecha: 'Martes 13 de abril 5:00 a 6:00 PM', titulo: 'Cuando un virus nos obligó a cambiar: Herramientas digitales que nos permitieron seguir siendo humanos', conferencista: 'Diego Castresana Díaz', descripcion: 'Médico general con Maestría en Administración de Servicios de Salud y Diplomado en Alta Gerencia, con experiencia en administración de hospitales privados desde las fases de construcción y equipamiento hasta las de operación y puesta en marcha de los diversos servicios, con experiencia internacional. Dominio oral y escrito del idioma inglés (comercial, médico y académico), completamente bilingüe. Actualmente es el Director Ejecutivo del Hospital Universidad del Norte.', inscribete: '', imagen: 'http://travel.spotcoolstuff.com/wp-content/uploads/2008/11/dark.jpg' },
+        { fecha: 'Martes 13 de abril 6:30 a 7:30 PM', titulo: 'Ergonomía: Disciplina innovadora', conferencista: 'Joaquín Duque Puerta', descripcion: 'Ingeniero Mecánico y Magíster en Ergonomía. Con más de 35 años de experiencia en áreas de la Biomecánica y la Ergonomía. Asesor de empresas de diferentes actividades económicas en temas relacionados con el análisis y  el diseño de soluciones para mejorar las condiciones de trabajo, diseño de sistemas de gestión para el manejo de la Seguridad y la Salud en el Trabajo, diseño de metodologías de análisis del trabajo. Investigación en el área de la biomecánica desarrollando productos como plantillas ortopédicas, diseño de equipos en el área de la rehabilitación y sistemas de análisis de movimiento humano. Docente catedrático de posgrado en varias universidades del País.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Joaquin-Duque.png/ff225345-55ad-4768-aa27-cd15b4cb8946?t=1616183861913' },
+        { fecha: 'Martes 13 de abril 5:00 a 6:00 PM', titulo: 'Nuevos retos digitales para los procesos de desarrollo y aprendizaje organizacional', conferencista: 'Sandra Castilla Stipcianos', descripcion: 'Comunicadora Social-Periodista, formadora y docente, con experiencia en desarrollo de competencias para construir relaciones sanas que fomenten un clima organizacional y micro-entornos laborales equilibrados e inspiradores para la transformación del ser y el favorecimiento del cambio. Gran interés en el servicio al cliente enfocado en construir momentos memorables y experiencias sorprendentes. Trainer en desarrollo de habilidades gerenciales de comunicación con metodología de Inscape DISC Publishing y herramientas andragógicas que proponen modelos innovadores de desarrollo del potencial humano corporativo. Diseñadora y desarrolladora de recursos de gamificación para formación empresarial y de entrenamiento personalizados para colaboradores tanto de base como de Alta Dirección. Coach Ontológico certificada con Escuela Axon Training, avalada por International Coach Federation (ICF).', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Sandra.png/e078d401-e376-4887-a50e-c1b0fa81e1ab?t=1616183862487' },
+        { fecha: 'Martes 13 de abril 6:30 a 7:30 PM', titulo: 'Marketing, Ventas, y Comunicaciones para atraer al consumidor en el mundo Phygital', conferencista: 'Katherine Pisciotti Quintero', descripcion: 'Máster en Dirección de Marketing & Gestión Comercial / Máster en Dirección Comercial Internacional. Docente Universidad del Norte Speaker en conferencias y diplomados sobre Estrategia, Transformación, Y Marketing Digital.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Katherine-Pisciotti.png/5bd6003a-31d5-49db-a3f4-f070ddaf93f4?t=1616102071110' },
+        { fecha: 'Miércoles 14 de abril 8:30 a 9:30 AM', titulo: 'Sistemas Internet of Robotics Things (IoRT) en operaciones y procesos industriales.', conferencista: 'HERNANDO EFRAIN LEON RODRIGUEZ', descripcion: 'Post.Doc/Ph.D. in Micro-Nano Robotics for Medical Applications; Chonnam National University, South Korea; 2013 – 2016. \n * Doctor of Philosophy in Robotics and None, Destructive Testing, London South Bank University. 2008. \n * Especialista en Redes y Telecomunicaciones, Universidad Cooperativa de Colombia. 2002. \n * Especialista en Mecatrónica, Corporación Tecnológica Industrial Colombiana. 2000. \n * Especialización tecnológica en implementación de sistemas robóticos industriales, Sena-Bogotá, 2012. \n * Ingeniero Electromecánico, Universidad Pedagógica y Tecnológica de Colombia.1998.', inscribete: '', imagen: 'http://travel.spotcoolstuff.com/wp-content/uploads/2008/11/dark.jpg' },
+        { fecha: 'Miércoles 14 de abril 8:30 a 9:30 AM', titulo: 'Computación espacial: digitalizando el mundo real.', conferencista: 'Fabian Molina Molina', descripcion: 'Jefe de Arquitectura Empresarial del Departamento de Arquitectura e Innovación Tecnológica del Banco de la República. Master of Science in Technology Management, University of Illinois at Urbana-Champaign, USA. Magíster en Ingeniería de Sistemas y Computación, Universidad de los Andes. Ingeniero de Sistemas, Universidad del Norte. CISSP: Certified Information Systems Security Professional (ISC2). CCSA/E: Checkpoint Certified Security Administrator/Expert (Firewalls).', inscribete: '', imagen: 'http://travel.spotcoolstuff.com/wp-content/uploads/2008/11/dark.jpg' },
+        { fecha: 'Miércoles 14 de abril 10:00 a 11:00 AM', titulo: 'Viviendo múltiples realidades durante la pandemia', conferencista: 'Pedro Wightman', descripcion: 'Ingeniero de Sistemas de la Universidad del Norte. Doctor en Ciencias de la Computación de la Universidad del Sur de la Florida. Sus líneas de investigación son privacidad de datos de localización, blockchain y sistemas de información médica, juegos serios basadas en realidades múltiples y videojuegos, infraestructura de comunicación para internet de las cosas y el género de ciencia ficción.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Pedro-Wightman.png/a2a8342e-8d7b-4005-9753-ba4751c3ed4f?t=1616102069617' },
+        { fecha: 'Miércoles 14 de abril 11:30 a 12:30 AM', titulo: 'Smart Cities - Ciudades inteligentes. Potenciales y problemas de una nueva forma de desarrollo urbano', conferencista: 'Florian Koch', descripcion: 'Prof. Dr. Florian Koch es profesor de planta en la Hochschule für Technik und Wirtschaft HTW en Berlin, Alemania desde 2018. Fue docente de largo plazo del DAAD en la Universidad del Norte, en donde dirigió el Instituto de Estudios Europeos entre 2011 y 2014. Realizó sus estudios universitarios en planificación urbana y tiene un PhD en sociología urbana. Sus temas de investigación actuales se centran en Smart Cities, Sostenibilidad Urbana y economía urbana. Ha publicado varios artículos y libros sobre estos temas y trabajó en proyectos de investigación urbana en América Latina, África y Europa.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Florian-Koch.png/84f0b1e6-dda9-4886-9081-c74d051000f0?t=1616102071450' },
+        { fecha: 'Miércoles 14 de abril 5:00 a 6:00 PM', titulo: 'Los entornos digitales y el servicio Publico', conferencista: 'Jorge Blanco Duarte', descripcion: 'Magister en Análisis de Problemas Económicos, Políticos e Internacionales, DEA en Gobierno y Administración Pública, Especialista en Finanzas Públicas, Técnico en Sistemas, Candidato a Doctor en Gobierno y Administración Pública, Docente e investigador Universitario.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Jorge-Blanco.png/e6e0f54f-710c-4b81-a123-71a9189115e1?t=1616183862667' },
+        { fecha: 'Jueves 15 de abril 8:30 a 9:30 AM', titulo: '5 tendencias logísticas en la realidad phygital', conferencista: 'Carolina Ruiz Soto', descripcion: 'Co fundadora y CEO de mipaquete.com \n Especialista en Logística integral, Master en Gerencia de Proyectos y certificada por el Massachusetts Institute of Technology (MIT) en Supply Chain Management. \n Experiencia desarrollando proyectos logísticos para grandes compañías en Colombia como Carvajal, Challenger, Contegral, Grupo Nutresa. \n Docente Universidad del Norte, UTP Pereira, Universidad Autónoma Latinoamericana Medellín.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Carolina-Ruiz.png/3d3259a9-b538-4806-ad04-932c0548c160?t=1616102069847' },
+        { fecha: 'Miércoles 14 de abril 3:30 a 4:30 PM', titulo: 'Innovación Financiera', conferencista: 'Andrés Fonseca', descripcion: 'Socio Director de CREDITCAPITAL BANCA DE INVERSIÓN.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Andres-Fonseca.png/f5a6c000-bab1-476e-a0ea-96d73bc961aa?t=1616183862833' },
+        { fecha: 'Jueves 15 de abril 10:00 a 11:00 AM', titulo: 'Phygital: el nuevo normal de las finanzas', conferencista: 'Jaime Sierra Giraldo', descripcion: 'MBA Executive en Dirección de Empresas del INALDE, Universidad de la Sabana. Programa de Alta Dirección Empresarial PADE; Economista con postgrado en Finanzas Privadas de la Universidad del Rosario. Cuenta con más de 25 años de experiencia y amplio conocimiento en las áreas de banca de inversión, banca comercial con énfasis en banca corporativa y riesgo crediticio del sector financiero. Actualmente, se desempeña como gerente general de Fiduciaria Corficolombiana donde se encarga de velar por el crecimiento y rentabilidad de los accionistas en las diferentes líneas de negocio tanto en Fondos administrados como en negocios fiduciarios. Asi mismo, docente con más de 20 años de experiencia en universidades de primer nivel en Colombia.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Jaime-Sierra.png/a1d0ae36-88bd-4720-a7d9-688752c6f8b1?t=1616102068207' },
+        { fecha: 'Miércoles 14 de abril 3:30 a 4:30 PM', titulo: 'Estudiando los materiales del futuro', conferencista: 'Dr Camilo Espejo', descripcion: 'Realizó sus estudios de doctorado en Nanociencias y Nanotecnología en el Centro de Investigación y Estudios Avanzados (CINVESTAV) del Instituto Politécnico Nacional de México. Sus investigaciones recientes giran en torno al desarrollo, implementación y aplicación de métodos computacionales para el estudio de nanoestructuras y sistemas de materia condensada,', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Camilo-Espejo.png/0d0ee8c8-48b7-4586-bd32-f098e8b8fd1b?t=1616102070423' },
+        { fecha: 'Jueves 15 de abril 11:30 a 12:30 AM', titulo: 'La historia de la Tierra contada desde el paisaje submarino', conferencista: 'Javier Idarraga', descripcion: 'Ph.D. en Geociencias. Universidad Nacional de Colombia.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Javier-Idarraga.png/86b7404d-439e-46a5-a435-167a26463505?t=1616102070140' },
+        { fecha: 'Jueves 15 de abril 10:00 a 11:00 AM', titulo: 'De la biodiversidad a la farmacia: diseño de fármacos inspirados en la naturaleza', conferencista: 'Dr. Edgar Márquez', descripcion: 'Químico por la Universidad de Oriente, Sucre, Venezuela. Doctor en Ciencias, Mención Química, Instituto Venezolano de Investigaciones Científicas, Caracas, Venezuela. \n Investigador Asociado (I) Minciencias, Áreas de Interés. Química Computacional, Interacción Ligando-Proteína, Diseño de compuestos activos basado en aproximaciones computacionales, Degradación de nuevos contaminantes emergentes', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Edgar-Marquez.png/4da7255b-918d-45e1-9a63-b7ce976e115f?t=1616102069337' },
+        { fecha: 'Jueves 15 de abril 11:30 a 12:30 AM', titulo: 'Genómica y biodiversidad de insectos contra las necesidades insatisfechas del Caribe', conferencista: '​Dr. Rafik Neme', descripcion: 'Biologo de la Universidad Nacional de Colombia. Doctor en Genetica Evolutiva de la Universidad de Kiel, Alemania. Lider del Grupo Asociado Max Planck para Genomica y Biodiversidad del Caribe. Experto en Genomica Evolutiva, especialmente en aproximaciones basadas en datos para el estudio de preguntas biologicas, tales como el origen de genes y otros caracteres complejos. Actualmente trabaja en establecer herramientas genomicas para el estudio de la biodiversidad y su aplicacion a problemas del Caribe.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Rafik-Neme.png/e0020bb8-aaae-446c-b416-ffff4b80fd83?t=1616102071863' },
+        { fecha: 'Jueves 15 de abril 8:30 a 9:30 AM', titulo: 'Financial Forecasting', conferencista: 'Lihki Rubio', descripcion: 'Matemático con formación doctoral en ciencias aplicadas con mención en ingeniería matemática de la universidad de Concepción, Chile. Sus líneas e intereses de investigación se centran en los métodos numéricos de ecuaciones diferenciales parciales y computación científica, así como también en data science, y blockchain. Actualmente es docente de tiempo completo de la universidad del Norte.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Lihki-Rubio.png/ad14db75-7566-4d9f-851b-fb5c4d5eb430?t=1616102069057' },
+        { fecha: 'Martes 13 de abril 2:00 a 3:00 PM', titulo: 'Strengthening Reading and Oral Fluency through Reading Protocols', conferencista: 'Erica Ferrer Ariza, M.A. \n Jorge Linero M.A.\n Rodrigo Rodriguez-Fuentes, PhD.', descripcion: 'Rodrigo A. Rodríguez-Fuentes M.A. in Education from Universidad del Norte and a Ph.D. in Second Language Studies from Purdue University. He has taught EFL at all academic levels and has supervised training of English instructors in Colombia and international college instructors across fields in the United States. \n \n Jorge Linero is a teacher-researcher, coordinator of the English for Specific Purpose programs at the Universidad del Norte. His research interests and experience include curriculum development, language skills and higher education policies.\n \n Erica Ferrer Ariza is a teacher-researcher, coordinator of the MA in English language teaching program at the Universidad del Norte and an MA in language teaching and learning from the University of Liverpool, UK. Her research interests and experience include curriculum development, language skills, and peace education.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Erika-Ferrer.png/3aabe109-3d15-4cbe-ab5d-3c79aeba3104?t=1616102068723', imagen2: 'https://www.uninorte.edu.co/documents/3464272/16463699/Jorge-Linero.png/6b410ba9-aa45-4d17-a280-1a46aa772c78?t=1616102067927', imagen3: 'https://www.uninorte.edu.co/documents/3464272/16463699/Rodrigo-Rodriguez.png/d36f36c7-0618-4c34-bfc5-41449750a1d4?t=1616102067320' },
+        { fecha: 'Martes 13 de abril 10:00 a 11:00 PM', titulo: 'Tecnología educativa: Ciberpunk y otras narrativas audiovisuales', conferencista: 'Rennier Estefan Ligarretto Feo', descripcion: 'Profesor de la Facultad de Educación de la Pontificia Universidad Javeriana, integrante del grupo de investigación In novum Educatio.  Mestre em Ciências da Educação de la Universidad Nova de Lisboa, Portugal y Psicólogo de la Universidad Externado de Colombia. Asesor en proyectos para el Ministerio TIC, Universidad del Rosario, Función Pública, Ministerio de Educación Nacional, Computadores para Educar, ESAP, entre otras.', inscribete: '', imagen: 'https://www.uninorte.edu.co/documents/3464272/16463699/Rennier-Estefan/e9f81aec-42dd-462d-b8fb-5b0bf6d157b6?t=1616102296277' }
+    
+        ]
+    
+        // etiquetas en el modal
+        const fechaC = document.getElementById('fecha-c');
+        const imagenC = document.getElementById('imagen-modal-c');
+        const tituloC = document.getElementById('titulo-c');
+        const conferencistaC = document.getElementById('conferencista-c');
+        const descripcionC = document.getElementById('descripcion-c');
+        const inscribeteC = document.getElementById('inscribete-c');
+    
+        // etiquetas en el modal de conferencista 2
+    
+        const c2 = document.getElementById('conferencista2');
+        const imagenC2 = document.getElementById('imagen-modal-c2');
+        const fechaC2 = document.getElementById('fecha-c2');
+        const tituloC2 = document.getElementById('titulo-c2');
+        const conferencistaC2 = document.getElementById('conferencista-c2');
+        const descripcionC2 = document.getElementById('descripcion-c2');
+        const inscribeteC2 = document.getElementById('inscribete-c2');
+    
+        //Imagenes idiomas adicionales
+        const image1 = document.getElementById('imagen-modal-c-2');
+        const image2 = document.getElementById('imagen-modal-c-3');
+    
+    
+        const openModal = (pos) => {
+            modal.style.display = "flex";
+            fechaC.innerText = datos[pos].fecha;
+            tituloC.innerText = datos[pos].titulo;
+            conferencistaC.innerText = datos[pos].conferencista;
+            descripcionC.innerText = datos[pos].descripcion;
+            inscribeteC.innerText = datos[pos].inscribete;
+            imagenC.src = datos[pos].imagen;
+    
+            //SI es el area instituto de idiomas
+            if (pos === 21) {
+                image1.style = "display: block";
+                image2.style = "display: block";
+                image1.src = datos[pos].imagen2;
+                image2.src = datos[pos].imagen3;
+            } else {
+    
+                image1.style = "display: none";
+                image2.style = "display: none";
+    
+            }
+    
+            //Agrega los datos de las areas que tengan 2 dias
+            if (pos === 4 || pos === 9 || pos === 14 || pos === 16 || pos === 18) {
+                fechaC2.innerText = datos[pos + 1].fecha;
+                tituloC2.innerText = datos[pos + 1].titulo;
+                conferencistaC2.innerText = datos[pos + 1].conferencista;
+                descripcionC2.innerText = datos[pos + 1].descripcion;
+                inscribeteC2.innerText = datos[pos + 1].inscribete;
+                imagenC2.src = datos[pos + 1].imagen;
+                c2.style = "display: flex";
+                fechaC2.style = "display: block;"
+            } else {
+                fechaC2.style = "display: none;"
+                c2.style = "display: none;"
+            }
+        }
+    
+        // Get the modal
+        const modal = document.getElementById("modal-conferencias");
+    
+        // Get the <span> element that closes the modal
+        const span = document.getElementsByClassName("close-modal-conferencias")[0];
+    
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    
+        document.getElementById('modal-conferencias').addEventListener("click", (e) => {
+            if (e.target.id !== 'modal-conferencias') return;
+            modal.style.display = "none";
+        })
+    
+    
+        //smooth scroll
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $(".scroll-areas").on('click', function (event) {
+    
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+    
+                    // Store hash
+                    var hash = this.hash;
+    
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+    
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    
+    
+    
+    </script>
