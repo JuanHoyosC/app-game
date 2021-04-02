@@ -4,9 +4,13 @@ const router = express.Router();
 const controllerUser = require('../controllers/index');
 
 
-router.get('/', (req, res) => controllerUser.findUser());
+router.get('/', controllerUser.findUsers);
 
-router.get('/:username', async (req, res) => await controllerUser.findUserExist(req, res));
+router.post('/register', controllerUser.addUser);
+
+router.post('/login', controllerUser.findUser);
+
+router.get('/:username', controllerUser.findUserExist);
 
 
 module.exports = router;
